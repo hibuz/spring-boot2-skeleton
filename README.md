@@ -23,6 +23,7 @@ java -jar target/*.jar
 ```
 
 Then navigate to followings below in your browser.
+- http://localhost:8080/account/h2-console
 - http://localhost:8080/account/swagger-ui.html
 
 

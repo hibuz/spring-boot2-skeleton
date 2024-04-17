@@ -18,6 +18,7 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests(authorize ->
                 authorize.antMatchers( "/swagger-ui.html", "/webjars/**", "/swagger-resources/**", "/v2/api-docs").permitAll()
+                        .antMatchers("/h2-console/**").permitAll()
                         .anyRequest().authenticated());
 
         http.headers(headers ->
