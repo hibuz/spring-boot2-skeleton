@@ -2,9 +2,9 @@
 
 ## Step 1. Create Initial Project
 ![spring-initializr](.github/spring.svg)
-> [Project URL](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.2.4&packaging=jar&jvmVersion=17&groupId=com.hibuz&artifactId=account&name=spring-boot-skeleton&description=Demo%20project%20for%20Spring%20Boot&packageName=com.hibuz.account&dependencies=native,lombok,devtools,web,security,data-jpa,h2,validation,restdocs)
+> [Project URL](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.2.4&packaging=jar&jvmVersion=17&groupId=com.hibuz&artifactId=account&name=spring-boot-skeleton&description=Demo%20project%20for%20Spring%20Boot&packageName=com.hibuz.account&dependencies=native,lombok,devtools,web,security,data-jpa,h2,validation,restdocs,actuator)
 
-Downgrade spring boot to version 2, add maven wrapper
+Downgrade to spring boot version 2, add maven wrapper
 
 ## Building for production
 

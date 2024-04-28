@@ -37,9 +37,46 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>2.5.0</version>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.8.0</version>
+		</dependency>
+
+		<!-- AdonisTrack -->
+		<dependency>
+			<groupId>com.woozooha</groupId>
+			<artifactId>adonistrack</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.woozooha</groupId>
+			<artifactId>adonistrack-springweb</artifactId>
+			<version>2.0.28</version>
+		</dependency>
+		<dependency>
+			<groupId>com.woozooha</groupId>
+			<artifactId>adonistrack-ui</artifactId>
+			<version>2.0.29</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- For logging sql -->
+		<dependency>
+			<groupId>org.bgee.log4jdbc-log4j2</groupId>
+			<artifactId>log4jdbc-log4j2-jdbc4.1</artifactId>
+			<version>1.16</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- For adonistrack-ui webjars url location -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator-core</artifactId>
+			<version>0.55</version>
 		</dependency>
 
 		<dependency>

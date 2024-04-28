@@ -39,10 +39,12 @@ public class SecurityConfig {
     @ConditionalOnProperty(name="spring.h2.console.enabled", havingValue="true")
     protected SecurityFilterChain config(HttpSecurity http,
                                          @Value("${server.servlet.context-path}") String contextPath) throws Exception {
+
         log.info("http://localhost:8080{}/swagger-ui/index.html", contextPath);
+        log.info("http://localhost:8080{}/webjars/adonistrack-ui/html/invocations.html", contextPath);
 
         http.authorizeHttpRequests(authorize ->
-                authorize.antMatchers("/v3/api-docs/**", "/swagger-ui/**").permitAll()
+                authorize.antMatchers("/v3/api-docs/**", "/swagger-ui/**", "/webjars/**").permitAll()
                         .antMatchers("/h2-console/**").permitAll()
                         .anyRequest().authenticated());
 
