@@ -1,6 +1,9 @@
 package com.hibuz.account.api;
 
 import com.hibuz.account.application.UserService;
+import com.hibuz.account.global.common.Constants;
+
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api")
+@Tag(name="user-resource", description = "username=" + Constants.USER + ", password=" + Constants.PASSWORD)
 public class UserResource {
 
     private final UserService userService;

@@ -11,7 +11,10 @@ import java.io.File;
 @Component
 public class AdonisTrackAspect extends ProfileAspect {
 
-    @Pointcut("execution(* *(..)) && (within(com.hibuz.account..*)) && !within(com.hibuz.account.global.config..*)")
+    @Pointcut("execution(* *(..)) && (" +
+                "within(com.hibuz.account..*) ||" +
+                "within(org.springframework.data.jpa.repository.JpaRepository+)) &&" +
+                "!within(com.hibuz.account.global.config..*)")
     public void executionPointcut() {
     }
 

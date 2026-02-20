@@ -1,8 +1,9 @@
 package com.hibuz.account.global.config;
 
 import com.woozooha.adonistrack.api.AdonisTrackHttpTraceFilter;
-import com.woozooha.adonistrack.filter.AdonistrackFilter;
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.actuate.trace.http.HttpExchangeTracer;
 import org.springframework.boot.actuate.trace.http.HttpTraceRepository;
 import org.springframework.boot.actuate.trace.http.InMemoryHttpTraceRepository;
@@ -13,7 +14,9 @@ import org.springframework.context.annotation.Configuration;
 @Slf4j
 @Configuration
 public class AdonisTrackConfig {
-
+	@Value("${server.servlet.context-path:}")
+	private String contextPath;
+    
     @Bean
     public HttpTraceRepository httpTraceRepository() {
         return new InMemoryHttpTraceRepository();
@@ -23,17 +26,7 @@ public class AdonisTrackConfig {
     public FilterRegistrationBean<AdonisTrackHttpTraceFilter> adonisTrackHttpTraceFilter(HttpTraceRepository repository, HttpExchangeTracer tracer) {
         FilterRegistrationBean<AdonisTrackHttpTraceFilter> registrationBean = new FilterRegistrationBean<>();
         registrationBean.setFilter(new AdonisTrackHttpTraceFilter(repository, tracer));
-        registrationBean.addUrlPatterns("/api/**");
-
-        return registrationBean;
-    }
-
-    @Bean
-    public FilterRegistrationBean<AdonistrackFilter> profileFilter() {
-        FilterRegistrationBean<AdonistrackFilter> registrationBean = new FilterRegistrationBean<>();
-
-        registrationBean.setFilter(new AdonistrackFilter());
-        registrationBean.addUrlPatterns("/api/**");
+        registrationBean.addUrlPatterns(contextPath + "/api/*", contextPath + "/open/*");
 
         return registrationBean;
     }

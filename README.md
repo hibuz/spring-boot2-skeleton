@@ -24,7 +24,8 @@ java -jar target/*.jar
 
 Then navigate to followings below in your browser.
 - http://localhost:8080/account/h2-console
-- http://localhost:8080/account/swagger-ui.html
+- http://localhost:8080/account/swagger-ui/index.html
+- http://localhost:8080/account/webjars/adonistrack-ui/html/invocations.html
 
 
 ## References

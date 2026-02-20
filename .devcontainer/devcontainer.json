@@ -3,31 +3,21 @@
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
       "ghcr.io/devcontainers/features/java:1": {
-        "version": "21-oracle",
-        "jdkDistro": "oracle"
+        "version": "17"
       },
-      "ghcr.io/devcontainers/features/node:1": {},
-      "docker-in-docker": "latest",
-      "github-cli": "latest"
+      "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
     },
-  
+    "remoteEnv": {
+      "JAVA_TOOL_OPTIONS": "-javaagent:${containerWorkspaceFolder}/target/agents/aspectjweaver.jar",
+      "DOCKER_API_VERSION": "1.43"
+    },
     "customizations": {
       "vscode": {
-        "settings": {},
         "extensions": [
-          "dawhite.mustache",
-          "esbenp.prettier-vscode",
-          "github.vscode-pull-request-github",
-          "ms-vsliveshare.vsliveshare",
-          "redhat.fabric8-analytics",
-          "redhat.vscode-xml",
-          "streetsidesoftware.code-spell-checker",
-          "visualstudioexptteam.vscodeintellicode",
-          "vscjava.vscode-java-pack"
+          "vscjava.vscode-spring-boot-dashboard",
+          "eamodio.gitlens",
+          "k--kato.intellij-idea-keybindings"
         ]
       }
-    },
-  
-    "forwardPorts": [7471],
-    "remoteUser": "vscode"
+    }
   }
